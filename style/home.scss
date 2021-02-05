@@ -1,0 +1,131 @@
+html {
+    font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+    html {
+        font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    html {
+        font-size: 22px;
+    }
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.navbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 15%;
+    color: white;
+
+    .nav-left {
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 4em;
+            height: 4em;
+            border: 2px solid white;
+            border-radius: 50%;
+        }
+
+        .nav-name {
+            font-size: 1.6rem;
+            margin-left: 1em;
+            align-self: center;
+            display: inline-block;
+        }
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 35px;
+        width: 50px;
+        cursor: pointer;
+        
+        .long-bar {
+            align-self: flex-end;
+            width: 100%;
+            border: 1px solid white;
+            transition: width 0.5s ease;
+        }
+
+        .middle-bar {
+            align-self: flex-end;
+            width: 60%;
+            border: 1px solid white;
+            transition: width 0.5s ease;
+        }
+    }
+
+    .menu:hover {
+        .long-bar {
+            width: 60%;
+        }
+
+        .middle-bar {
+            width: 100%;
+        }
+    }
+}
+
+.title {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    .welcome {
+        font-size: 12rem;
+    }
+
+    .sam {
+        font-size: 3rem;
+    }
+
+    @media screen and (max-width: 360px) {
+        .welcome {
+            font-size: 4rem;
+        }
+        .sam {
+            font-size: 1.5rem;
+        }
+    }
+} 
+
+.back-text {
+    position: absolute;
+    opacity: 0.1;
+    color: white;
+    font-size: 30vw;
+    line-height: 0;
+    pointer-events: none;
+}
+
+.bt-1 {
+    top: 30%;
+}
+.bt-2 {
+    top: 70%;
+}
