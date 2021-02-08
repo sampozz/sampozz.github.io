@@ -12,37 +12,53 @@ let skillz = [
     'Angular',
     'database'
 ]
-
-
-let bts = document.querySelectorAll('.back-text');
-
-for (let bt of bts) {
-    bt.innerHTML = choice(skillz);
+let randomSort = []
+for (let i = 0; i < skillz.length; i++) {
+    randomSort.push(i);
 }
 
-gsap.timeline()
-    .from('.bt-1', {x: -300, opacity: 0, duration: 0.5, ease: 'linear'})
-    .to('.bt-1', {x: 500, duration: 4, ease: 'linear'})
-    .to('.bt-1', {x: 800, opacity: 0, duration: 0.5, ease: 'linear', onComplete: replaceSkill})
-    .repeat(-1);
+generateBackground();
+setInterval(generateBackground, 4000);
 
-gsap.timeline()
-    .fromTo('.bt-2', {x: 800, opacity: 0}, {x: 500, opacity: 0.1, duration: 0.5, ease: 'linear'})
-    .fromTo('.bt-2', {x: 500}, {x: 0, duration: 4, ease: 'linear'})
-    .to('.bt-2', {x: -300, opacity: 0, duration: 0.5, ease: 'linear', onComplete: replaceSkill})
-    .repeat(-1);
+function generateBackground() {
+    randomSort = shuffle(randomSort);
+    skillz = shuffle(skillz);
+    let n = 10;
+    let bts = document.querySelectorAll('.back-text');
 
+    for (let bt of bts) {
+        bt.remove();
+    }
 
-function replaceSkill() {
-    let skill = choice(skillz);
-    document.querySelector('.bt-1').innerHTML = skill;
-    do {
-        skill = choice(skillz);
-    } while (skill == document.querySelector('.bt-1').innerHTML)
-    document.querySelector('.bt-2').innerHTML = skill;
+    for (let i = 0; i < n; i++) {
+        let yPosition = document.body.clientHeight / n * i;
+        let xPosition = document.body.clientWidth / n * randomSort[i];
+        newChild = document.createElement('div');
+        newChild.classList.add('back-text');
+        newChild.style.top = yPosition + 'px';
+        newChild.style.left = xPosition + 'px';
+        newChild.style.animation = i % 2 == 0 ? 'right-slide 4s linear': 'left-slide 4s linear';
+        newChild.style.animationFillMode = 'forwards';
+        newChild.innerHTML = skillz[i];
+        document.body.appendChild(newChild);
+    }
 }
 
-function choice(array) {
-    let index = Math.floor(Math.random() * array.length);
-    return array[index];
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+    
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
 }

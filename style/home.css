@@ -129,11 +129,11 @@ body, html {
 }
 
 .title .welcome {
-  font-size: 12rem;
+  font-size: 8rem;
 }
 
 .title .sam {
-  font-size: 3rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 360px) {
@@ -147,18 +147,86 @@ body, html {
 
 .back-text {
   position: absolute;
-  opacity: 0.1;
   color: white;
-  font-size: 30vw;
+  font-size: 5rem;
   line-height: 0;
   pointer-events: none;
+  z-index: 0;
 }
 
-.bt-1 {
-  top: 30%;
+@-webkit-keyframes right-slide {
+  0% {
+    opacity: 0;
+    margin-left: 0;
+  }
+  10% {
+    opacity: 0.1;
+    margin-left: 100px;
+  }
+  90% {
+    opacity: 0.1;
+    margin-left: 150px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: 250px;
+  }
 }
 
-.bt-2 {
-  top: 70%;
+@keyframes right-slide {
+  0% {
+    opacity: 0;
+    margin-left: 0;
+  }
+  10% {
+    opacity: 0.1;
+    margin-left: 100px;
+  }
+  90% {
+    opacity: 0.1;
+    margin-left: 150px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: 250px;
+  }
+}
+
+@-webkit-keyframes left-slide {
+  0% {
+    opacity: 0;
+    margin-left: 0;
+  }
+  10% {
+    opacity: 0.1;
+    margin-left: -100px;
+  }
+  90% {
+    opacity: 0.1;
+    margin-left: -150px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -250px;
+  }
+}
+
+@keyframes left-slide {
+  0% {
+    opacity: 0;
+    margin-left: 0;
+  }
+  10% {
+    opacity: 0.1;
+    margin-left: -100px;
+  }
+  90% {
+    opacity: 0.1;
+    margin-left: -150px;
+  }
+  100% {
+    opacity: 0;
+    margin-left: -250px;
+  }
 }
 /*# sourceMappingURL=home.css.map */
