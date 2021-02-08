@@ -10,7 +10,13 @@ let skillz = [
     'Python',
     'docker',
     'Angular',
-    'database'
+    'database',
+    'security',
+    'data',
+    'science',
+    'apps',
+    'networks',
+    'servers'
 ]
 let randomSort = []
 for (let i = 0; i < skillz.length; i++) {
