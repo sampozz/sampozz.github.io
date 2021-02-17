@@ -1,5 +1,7 @@
 html {
-    font-size: 16px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 @media screen and (min-width: 320px) {
@@ -7,10 +9,10 @@ html {
         font-size: calc(16px + 6 * ((100vw - 320px) / 680));
     }
 }
-
-@media screen and (min-width: 1000px) {
+  
+@media screen and (min-width: 1440px) {
     html {
-        font-size: 22px;
+        font-size: 26px;
     }
 }
 
@@ -20,7 +22,6 @@ body, html {
     width: 100%;
     min-height: 100vh;
     background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
     overflow: hidden;
 }
 
@@ -55,14 +56,14 @@ body {
         justify-content: center;
 
         img {
-            width: 4em;
-            height: 4em;
+            width: 3.5em;
+            height: 3.5em;
             border: 2px solid white;
             border-radius: 50%;
         }
 
         .nav-name {
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             margin-left: 1em;
             align-self: center;
             display: inline-block;
@@ -115,11 +116,26 @@ body {
     animation: fade-in 1s forwards;
 
     .welcome {
-        font-size: 7rem;
+        text-align: center;
+        font-size: 6rem;
+        margin: 0 0.5em 0 0.5em;
     }
 
     .sam {
+        margin-top: 0.5em;
         font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: 1360px) {
+        .welcome {
+            font-size: 4.5rem;            
+        }
+
+        .sam {
+            margin: 1em 1em 0 1em;
+            text-align: center;
+            font-size: 1.2rem;
+        }
     }
 
     @media screen and (max-width: 360px) {
@@ -135,7 +151,7 @@ body {
 .back-text {
     position: absolute;
     color: white;
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 0;
     pointer-events: none;
     z-index: 0;

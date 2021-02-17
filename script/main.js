@@ -19,7 +19,8 @@ let skillz = [
     'servers'
 ]
 let randomSort = []
-for (let i = 0; i < skillz.length; i++) {
+let n = 10;
+for (let i = 0; i < n; i++) {
     randomSort.push(i);
 }
 
@@ -29,7 +30,6 @@ setInterval(generateBackground, 4000);
 function generateBackground() {
     randomSort = shuffle(randomSort);
     skillz = shuffle(skillz);
-    let n = 10;
     let bts = document.querySelectorAll('.back-text');
 
     for (let bt of bts) {
