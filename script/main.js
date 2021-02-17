@@ -1,3 +1,5 @@
+// Scripts
+
 let skillz = [
     'coding',
     'UI/UX',
@@ -16,16 +18,47 @@ let skillz = [
     'science',
     'apps',
     'networks',
-    'servers'
+    'servers',
+    'engineering'
 ]
 let randomSort = []
-let n = 10;
-for (let i = 0; i < n; i++) {
-    randomSort.push(i);
-}
-
+let n = 10; // Number of skillz at the same time
+for (let i = 0; i < n; i++) { randomSort.push(i) }
 generateBackground();
 setInterval(generateBackground, 4000);
+document.querySelector('.fullscreen-menu').style.display = 'none';
+document.querySelector('.menu-btn').addEventListener('click', toggleMenu);
+
+// Functions
+
+function toggleMenu() {
+    let menu = document.querySelector('.fullscreen-menu');
+    let title = document.querySelector('.title');
+    let menuBtn = document.querySelectorAll('.bar');
+
+    if (menu.style.display == 'none') {
+        // Menu button
+        document.querySelector('.middle-bar').style.display = 'none';
+        menuBtn[0].classList.add('close-btn-1');
+        menuBtn[1].classList.add('close-btn-2');
+        menuBtn[0].classList.remove('long-bar');
+        menuBtn[1].classList.remove('long-bar');
+        // Content
+        title.classList.add('anim-fade-out');
+        menu.style.display = 'flex';
+    } else {
+        // menu button
+        document.querySelector('.middle-bar').style.display = 'block';
+        menuBtn[0].classList.remove('close-btn-1');
+        menuBtn[1].classList.remove('close-btn-2');
+        menuBtn[0].classList.add('long-bar');
+        menuBtn[1].classList.add('long-bar');
+        // Content
+        title.classList.remove('anim-fade-out');
+        title.style.display = 'flex';
+        menu.style.display = 'none';
+    }
+}
 
 function generateBackground() {
     randomSort = shuffle(randomSort);
@@ -52,10 +85,8 @@ function generateBackground() {
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
-
     // While there remain elements to shuffle...
     while (0 !== currentIndex) {
-  
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
@@ -65,6 +96,5 @@ function shuffle(array) {
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
     }
-  
     return array;
 }
