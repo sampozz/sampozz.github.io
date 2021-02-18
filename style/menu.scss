@@ -7,6 +7,7 @@
     z-index: 15;
     flex-direction: column;
     justify-content: center;
+    animation: menu-blur 0.5s linear 1s forwards; 
 
     .lista {
         margin: auto;
@@ -15,28 +16,30 @@
         align-items: center;
         
         .item1 {
-            animation: menu-fade-in 1s ease 0.5s forwards;
+            animation: menu-fade-in 1s ease 1s forwards;
         }
 
         .item2 {
-            animation: menu-fade-in 1s ease 1s forwards;
+            animation: menu-fade-in 1s ease 1.5s forwards;
         }
 
         .item {
             text-align: center;
             width: fit-content;
+            position: relative;
             font-size: 4rem;
             color: white;
             opacity: 0;
             cursor: pointer;
-            margin-left: 200px;
+            left: 200px;
 
             .underline {
                 font-size: 4rem;
-                height: 2px;
+                height: 5px;
                 width: 0;
                 background-color: white;
                 margin: 0 auto 0.5em auto;
+                border-radius: 50px;
                 transition: width 0.5s;
             }
         }        
@@ -51,13 +54,22 @@
 
         @keyframes menu-fade-in {
             from {
-                margin-left: 200px; 
+                left: 300px; 
                 opacity: 0; 
             }
             to { 
-                margin-left: 0;
+                left: 0;
                 opacity: 1; 
             }
         }
+    }
+}
+
+@keyframes menu-blur {
+    from {
+        backdrop-filter: blur(0px) brightness(100%);
+    }
+    to {
+        backdrop-filter: blur(10px) brightness(70%);
     }
 }

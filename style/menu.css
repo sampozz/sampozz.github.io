@@ -12,6 +12,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-animation: menu-blur 0.5s linear 1s forwards;
+          animation: menu-blur 0.5s linear 1s forwards;
 }
 
 .fullscreen-menu .lista {
@@ -29,13 +31,13 @@
 }
 
 .fullscreen-menu .lista .item1 {
-  -webkit-animation: menu-fade-in 1s ease 0.5s forwards;
-          animation: menu-fade-in 1s ease 0.5s forwards;
+  -webkit-animation: menu-fade-in 1s ease 1s forwards;
+          animation: menu-fade-in 1s ease 1s forwards;
 }
 
 .fullscreen-menu .lista .item2 {
-  -webkit-animation: menu-fade-in 1s ease 1s forwards;
-          animation: menu-fade-in 1s ease 1s forwards;
+  -webkit-animation: menu-fade-in 1s ease 1.5s forwards;
+          animation: menu-fade-in 1s ease 1.5s forwards;
 }
 
 .fullscreen-menu .lista .item {
@@ -43,19 +45,21 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: relative;
   font-size: 4rem;
   color: white;
   opacity: 0;
   cursor: pointer;
-  margin-left: 200px;
+  left: 200px;
 }
 
 .fullscreen-menu .lista .item .underline {
   font-size: 4rem;
-  height: 2px;
+  height: 5px;
   width: 0;
   background-color: white;
   margin: 0 auto 0.5em auto;
+  border-radius: 50px;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
 }
@@ -70,23 +74,45 @@
 
 @-webkit-keyframes menu-fade-in {
   from {
-    margin-left: 200px;
+    left: 300px;
     opacity: 0;
   }
   to {
-    margin-left: 0;
+    left: 0;
     opacity: 1;
   }
 }
 
 @keyframes menu-fade-in {
   from {
-    margin-left: 200px;
+    left: 300px;
     opacity: 0;
   }
   to {
-    margin-left: 0;
+    left: 0;
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes menu-blur {
+  from {
+    -webkit-backdrop-filter: blur(0px) brightness(100%);
+            backdrop-filter: blur(0px) brightness(100%);
+  }
+  to {
+    -webkit-backdrop-filter: blur(10px) brightness(70%);
+            backdrop-filter: blur(10px) brightness(70%);
+  }
+}
+
+@keyframes menu-blur {
+  from {
+    -webkit-backdrop-filter: blur(0px) brightness(100%);
+            backdrop-filter: blur(0px) brightness(100%);
+  }
+  to {
+    -webkit-backdrop-filter: blur(10px) brightness(70%);
+            backdrop-filter: blur(10px) brightness(70%);
   }
 }
 /*# sourceMappingURL=menu.css.map */

@@ -25,7 +25,7 @@ let randomSort = []
 let n = 10; // Number of skillz at the same time
 for (let i = 0; i < n; i++) { randomSort.push(i) }
 generateBackground();
-setInterval(generateBackground, 4000);
+setInterval(generateBackground, 5000);
 document.querySelector('.fullscreen-menu').style.display = 'none';
 document.querySelector('.menu-btn').addEventListener('click', toggleMenu);
 
@@ -37,6 +37,8 @@ function toggleMenu() {
     let menuBtn = document.querySelectorAll('.bar');
 
     if (menu.style.display == 'none') {
+        // Background
+        document.querySelector('.background').classList.add('background-menu');
         // Menu button
         document.querySelector('.middle-bar').style.display = 'none';
         menuBtn[0].classList.add('close-btn-1');
@@ -45,8 +47,11 @@ function toggleMenu() {
         menuBtn[1].classList.remove('long-bar');
         // Content
         title.classList.add('anim-fade-out');
+        setTimeout(() => { title.style.display = 'none' }, 1000);
         menu.style.display = 'flex';
     } else {
+        // Background
+        document.querySelector('.background').classList.remove('background-menu');
         // menu button
         document.querySelector('.middle-bar').style.display = 'block';
         menuBtn[0].classList.remove('close-btn-1');
