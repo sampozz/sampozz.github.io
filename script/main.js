@@ -37,6 +37,8 @@ function toggleMenu() {
         $('.bar2').addClass('close-btn-2');
         $('.bar1').removeClass('long-bar');
         $('.bar2').removeClass('long-bar');
+        // background
+        // $('.back-text').css('filter', 'blur(10px)');
         // Content
         $('.title').addClass('fade-out');
         setTimeout(() => {
@@ -52,7 +54,7 @@ function toggleMenu() {
         $('.bar1').addClass('long-bar');
         $('.bar2').addClass('long-bar');
         // Content
-        $('.title').removeClass('anim-fade-out');
+        $('.title').removeClass('fade-out');
         $('.title').css('display', 'flex');
         $('.fullscreen-menu').css('display', 'none');
     }
