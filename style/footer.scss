@@ -1,0 +1,45 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 70px;
+    z-index: 50;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    a {
+        text-decoration: none;
+    }
+
+    .icon-container {
+        margin: 0 0.5em 1em 0.5em; 
+        height: 40px;
+        transition: height 0.5s;
+        
+        
+        img {
+            width: 40px;
+        }
+    }
+
+    // .linkedin {
+    //     opacity: 0;
+    //     font-size: 0.7rem;
+    //     color: white;
+    //     position: absolute;
+    //     bottom: 20px;
+    //     transition: opacity 0.5s;
+    // }
+
+    // .ic1:hover ~ .linkedin {
+    //     opacity: 1;
+    // }
+
+    .icon-container:hover {
+        height: 70px;
+    }
+
+}

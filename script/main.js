@@ -1,67 +1,60 @@
-// Scripts
+// variables
 
 let skillz = [
-    'coding',
-    'UI/UX',
-    'web',
-    'DevOps',
-    'Git',
-    'Linux',
-    'Windows',
-    'JavaScript',
-    'Python',
-    'docker',
-    'Angular',
-    'database',
-    'security',
-    'data',
-    'science',
-    'apps',
-    'networks',
-    'servers',
-    'engineering'
+    'coding', 'UI/UX', 'web', 'DevOps',
+    'Git', 'Linux', 'Windows', 'JavaScript',
+    'Python', 'docker', 'Angular', 'database',
+    'security', 'data', 'science', 'apps',
+    'networks', 'servers', 'engineering'
 ]
 let randomSort = []
 let n = 10; // Number of skillz at the same time
 for (let i = 0; i < n; i++) { randomSort.push(i) }
-generateBackground();
-setInterval(generateBackground, 5000);
-document.querySelector('.fullscreen-menu').style.display = 'none';
-document.querySelector('.menu-btn').addEventListener('click', toggleMenu);
+let isMenu = false; // menu off
+
+// Script
+
+$(document).ready(() => {
+
+    $('#home').load('../modules/home.html');
+    $('#footer').load('../modules/footer.html');
+    $('#navbar').load('../modules/navbar.html', () => {
+        $('.menu-btn').click(toggleMenu);
+    });
+    generateBackground();
+    setInterval(generateBackground, 5000);
+
+});
 
 // Functions
 
 function toggleMenu() {
-    let menu = document.querySelector('.fullscreen-menu');
-    let title = document.querySelector('.title');
-    let menuBtn = document.querySelectorAll('.bar');
-
-    if (menu.style.display == 'none') {
-        // Background
-        document.querySelector('.background').classList.add('background-menu');
+    if (!isMenu) {
+        isMenu = true;
         // Menu button
         document.querySelector('.middle-bar').style.display = 'none';
-        menuBtn[0].classList.add('close-btn-1');
-        menuBtn[1].classList.add('close-btn-2');
-        menuBtn[0].classList.remove('long-bar');
-        menuBtn[1].classList.remove('long-bar');
+        $('.bar1').addClass('close-btn-1');
+        $('.bar2').addClass('close-btn-2');
+        $('.bar1').removeClass('long-bar');
+        $('.bar2').removeClass('long-bar');
         // Content
-        title.classList.add('anim-fade-out');
-        setTimeout(() => { title.style.display = 'none' }, 1000);
-        menu.style.display = 'flex';
+        $('.title').addClass('fade-out');
+        setTimeout(() => {
+            $('.title').css('display', 'none');
+            $('#fullscreen-menu').load('../modules/menu.html');
+        }, 1000);
     } else {
-        // Background
-        document.querySelector('.background').classList.remove('background-menu');
+        isMenu = false;
         // menu button
         document.querySelector('.middle-bar').style.display = 'block';
-        menuBtn[0].classList.remove('close-btn-1');
-        menuBtn[1].classList.remove('close-btn-2');
-        menuBtn[0].classList.add('long-bar');
-        menuBtn[1].classList.add('long-bar');
+        $('.bar1').removeClass('close-btn-1');
+        $('.bar2').removeClass('close-btn-2');
+        $('.bar1').addClass('long-bar');
+        $('.bar2').addClass('long-bar');
         // Content
-        title.classList.remove('anim-fade-out');
-        title.style.display = 'flex';
-        menu.style.display = 'none';
+        $('.title').removeClass('anim-fade-out');
+        $('.title').css('display', 'flex');
+        $('.fullscreen-menu').css('display', 'none');
     }
 }
 
@@ -81,7 +74,7 @@ function generateBackground() {
         newChild.classList.add('back-text');
         newChild.style.top = yPosition + 'px';
         newChild.style.left = xPosition + 'px';
-        newChild.style.animation = i % 2 == 0 ? 'right-slide 4s linear': 'left-slide 4s linear';
+        newChild.style.animation = i % 2 == 0 ? 'right-slide 4s linear' : 'left-slide 4s linear';
         newChild.style.animationFillMode = 'forwards';
         newChild.innerHTML = skillz[i];
         document.body.appendChild(newChild);
@@ -95,7 +88,7 @@ function shuffle(array) {
         // Pick a remaining element...
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
-    
+
         // And swap it with the current element.
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];

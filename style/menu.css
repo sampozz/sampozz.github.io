@@ -1,9 +1,7 @@
 .fullscreen-menu {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   z-index: 15;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -12,8 +10,10 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-animation: menu-blur 0.5s linear 1s forwards;
-          animation: menu-blur 0.5s linear 1s forwards;
+  -webkit-transition: -webkit-backdrop-filter 3s;
+  transition: -webkit-backdrop-filter 3s;
+  transition: backdrop-filter 3s;
+  transition: backdrop-filter 3s, -webkit-backdrop-filter 3s;
 }
 
 .fullscreen-menu .lista {
@@ -92,6 +92,11 @@
     left: 0;
     opacity: 1;
   }
+}
+
+.fullscreen-menu-blur {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 
 @-webkit-keyframes menu-blur {
