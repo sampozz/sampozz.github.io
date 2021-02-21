@@ -14,8 +14,6 @@
           align-items: center;
   color: white;
   z-index: 15;
-  -webkit-transition: all 1s;
-  transition: all 1s;
   -webkit-animation: fade-in 1s forwards;
           animation: fade-in 1s forwards;
 }
@@ -27,6 +25,7 @@
 }
 
 .title .sam {
+  text-align: center;
   margin-top: 0.5em;
   font-size: 1.5rem;
 }
@@ -52,9 +51,8 @@
 }
 
 .title.fade-out {
-  margin-right: 300px;
-  -webkit-animation: fade-out 1s forwards;
-          animation: fade-out 1s forwards;
+  -webkit-animation: fade-out 0.7s forwards;
+          animation: fade-out 0.7s forwards;
 }
 
 @-webkit-keyframes fade-in {
@@ -78,18 +76,22 @@
 @-webkit-keyframes fade-out {
   from {
     opacity: 1;
+    margin-right: 0;
   }
   to {
     opacity: 0;
+    margin-right: 300px;
   }
 }
 
 @keyframes fade-out {
   from {
     opacity: 1;
+    margin-right: 0;
   }
   to {
     opacity: 0;
+    margin-right: 300px;
   }
 }
 /*# sourceMappingURL=home.css.map */

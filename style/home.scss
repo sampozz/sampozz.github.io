@@ -7,7 +7,7 @@
     align-items: center;
     color: white;
     z-index: 15;
-    transition: all 1s;
+    // transition: all 1s;
     animation: fade-in 1s forwards;
 
     .welcome {
@@ -17,6 +17,7 @@
     }
 
     .sam {
+        text-align: center;
         margin-top: 0.5em;
         font-size: 1.5rem;
     }
@@ -44,8 +45,8 @@
 } 
 
 .title.fade-out {
-    margin-right: 300px;
-    animation: fade-out 1s forwards;
+    // margin-right: 300px;
+    animation: fade-out 0.7s forwards;
 }
 
 @keyframes fade-in {
@@ -54,6 +55,6 @@
 }
 
 @keyframes fade-out {
-    from { opacity: 1 }
-    to { opacity: 0 }
+    from { opacity: 1; margin-right: 0 }
+    to { opacity: 0; margin-right: 300px }
 }

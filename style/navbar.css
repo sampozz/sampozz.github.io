@@ -66,6 +66,7 @@
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 50px;
+  background-color: white;
   border: 1px solid white;
   -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
@@ -75,6 +76,7 @@
   -ms-flex-item-align: end;
       align-self: flex-end;
   width: 28px;
+  background-color: white;
   border: 1px solid white;
   -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
@@ -83,6 +85,7 @@
 .navbar .close-btn-1 {
   -webkit-animation: rotate-anim-1 0.5s forwards;
           animation: rotate-anim-1 0.5s forwards;
+  background-color: white;
   border: 1px solid white;
   position: absolute;
   width: 50px;
@@ -93,6 +96,7 @@
 .navbar .close-btn-2 {
   -webkit-animation: rotate-anim-2 0.5s forwards;
           animation: rotate-anim-2 0.5s forwards;
+  background-color: white;
   border: 1px solid white;
   position: absolute;
   top: 50%;

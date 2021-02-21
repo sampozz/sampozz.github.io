@@ -21,8 +21,10 @@ $(document).ready(() => {
     $('#navbar').load('../modules/navbar.html', () => {
         $('.menu-btn').click(toggleMenu);
     });
-    generateBackground();
-    setInterval(generateBackground, 5000);
+    setTimeout(() => {
+        generateBackground();
+        setInterval(generateBackground, 5000);
+    }, 500);
 
 });
 
@@ -32,30 +34,21 @@ function toggleMenu() {
     if (!isMenu) {
         isMenu = true;
         // Menu button
-        document.querySelector('.middle-bar').style.display = 'none';
-        $('.bar1').addClass('close-btn-1');
-        $('.bar2').addClass('close-btn-2');
-        $('.bar1').removeClass('long-bar');
-        $('.bar2').removeClass('long-bar');
-        // background
-        // $('.back-text').css('filter', 'blur(10px)');
+        $('.middle-bar').css('display', 'none');
+        $('.bar1').addClass('close-btn-1').removeClass('long-bar');
+        $('.bar2').addClass('close-btn-2').removeClass('long-bar');
         // Content
-        $('.title').addClass('fade-out');
-        setTimeout(() => {
-            $('.title').css('display', 'none');
-            $('#fullscreen-menu').load('../modules/menu.html');
-        }, 1000);
+        $('.title').addClass('fade-out').css('width', '100%');
+        setTimeout(() => { $('#fullscreen-menu').load('../modules/menu.html') }, 500);
+        setTimeout(() => { $('.title').css('display', 'none') }, 1000);
     } else {
         isMenu = false;
         // menu button
-        document.querySelector('.middle-bar').style.display = 'block';
-        $('.bar1').removeClass('close-btn-1');
-        $('.bar2').removeClass('close-btn-2');
-        $('.bar1').addClass('long-bar');
-        $('.bar2').addClass('long-bar');
+        $('.middle-bar').css('display', 'block');
+        $('.bar1').removeClass('close-btn-1').addClass('long-bar');
+        $('.bar2').removeClass('close-btn-2').addClass('long-bar');
         // Content
-        $('.title').removeClass('fade-out');
-        $('.title').css('display', 'flex');
+        $('.title').removeClass('fade-out').css('display', 'flex');
         $('.fullscreen-menu').css('display', 'none');
     }
 }
