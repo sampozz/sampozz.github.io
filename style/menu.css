@@ -33,27 +33,23 @@
           align-items: center;
 }
 
-.fullscreen-menu .lista .item1 {
+.fullscreen-menu .lista .item1.menuitem-fade-in {
   -webkit-animation: menu-fade-in 1s ease forwards;
           animation: menu-fade-in 1s ease forwards;
 }
 
-.fullscreen-menu .lista .item2 {
+.fullscreen-menu .lista .item2.menuitem-fade-in {
   -webkit-animation: menu-fade-in 1s ease 0.5s forwards;
           animation: menu-fade-in 1s ease 0.5s forwards;
 }
 
 .fullscreen-menu .lista .item {
   text-align: center;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   position: relative;
   font-size: 4rem;
   color: white;
   opacity: 0;
   cursor: pointer;
-  left: 200px;
 }
 
 .fullscreen-menu .lista .item .underline {
@@ -77,22 +73,22 @@
 
 @-webkit-keyframes menu-fade-in {
   from {
-    left: 300px;
+    margin-left: 500px;
     opacity: 0;
   }
   to {
-    left: 0;
+    margin-left: 0;
     opacity: 1;
   }
 }
 
 @keyframes menu-fade-in {
   from {
-    left: 300px;
+    margin-left: 500px;
     opacity: 0;
   }
   to {
-    left: 0;
+    margin-left: 0;
     opacity: 1;
   }
 }
@@ -103,8 +99,8 @@
             backdrop-filter: blur(0px) brightness(100%);
   }
   to {
-    -webkit-backdrop-filter: blur(5px) brightness(80%);
-            backdrop-filter: blur(5px) brightness(80%);
+    -webkit-backdrop-filter: blur(5px) brightness(70%);
+            backdrop-filter: blur(5px) brightness(70%);
   }
 }
 
@@ -114,8 +110,8 @@
             backdrop-filter: blur(0px) brightness(100%);
   }
   to {
-    -webkit-backdrop-filter: blur(5px) brightness(80%);
-            backdrop-filter: blur(5px) brightness(80%);
+    -webkit-backdrop-filter: blur(5px) brightness(70%);
+            backdrop-filter: blur(5px) brightness(70%);
   }
 }
 /*# sourceMappingURL=menu.css.map */
