@@ -73,22 +73,22 @@
 
 @-webkit-keyframes menu-fade-in {
   from {
-    margin-left: 500px;
+    left: 500px;
     opacity: 0;
   }
   to {
-    margin-left: 0;
+    left: 0;
     opacity: 1;
   }
 }
 
 @keyframes menu-fade-in {
   from {
-    margin-left: 500px;
+    left: 500px;
     opacity: 0;
   }
   to {
-    margin-left: 0;
+    left: 0;
     opacity: 1;
   }
 }

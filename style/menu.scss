@@ -22,14 +22,6 @@
         .item2.menuitem-fade-in {
             animation: menu-fade-in 1s ease 0.5s forwards;
         }
-        
-        // .item1.menuitem-fade-out {
-        //     animation: menu-fade-out 1s ease forwards;
-        // }
-
-        // .item2.menuitem-fade-out {
-        //     animation: menu-fade-out 1s ease 0.5s forwards;
-        // }
 
         .item {
             text-align: center;
@@ -60,25 +52,14 @@
 
         @keyframes menu-fade-in {
             from {
-                margin-left: 500px; 
+                left: 500px; 
                 opacity: 0; 
             }
             to { 
-                margin-left: 0;
+                left: 0;
                 opacity: 1; 
             }
         }
-        
-        // @keyframes menu-fade-out {
-        //     from {
-        //         margin-right: 0px; 
-        //         opacity: 1; 
-        //     }
-        //     to { 
-        //         margin-right: 500px;
-        //         opacity: 0; 
-        //     }
-        // }
     }
 }
 
