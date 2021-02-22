@@ -1,0 +1,15 @@
+.about {
+  text-align: center;
+  color: white;
+  margin: 0 2em 0 2em;
+}
+
+.about .title {
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+}
+
+.about .sub {
+  margin-bottom: 2em;
+}
+/*# sourceMappingURL=about.css.map */
