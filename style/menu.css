@@ -73,22 +73,26 @@
 
 @-webkit-keyframes menu-fade-in {
   from {
-    left: 500px;
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
     opacity: 0;
   }
   to {
-    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 }
 
 @keyframes menu-fade-in {
   from {
-    left: 500px;
+    -webkit-transform: translateX(500px);
+            transform: translateX(500px);
     opacity: 0;
   }
   to {
-    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
     opacity: 1;
   }
 }
