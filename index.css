@@ -53,6 +53,7 @@ body {
 
 h1 {
     opacity: 0;
+    text-align: center;
     margin: 1.5rem;
     letter-spacing: .5rem;
     animation: opacity-fadein-anim 2s forwards;
@@ -94,6 +95,10 @@ h2 {
 
 /* LINKS */
 
+#profile-link {
+    display: none;
+}
+
 .links-container {
     display: block;
     width: 33%;
@@ -115,8 +120,11 @@ h3 {
     animation: opacity-fadein-anim 1s forwards;
 }
 
-.link-list li span {
+.link-list li a {
     margin-left: 0.5rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* PROFILE */
@@ -138,9 +146,8 @@ h3 {
     }
 }
 
-.profile-container {
+.profile-container, .contacts-container {
     width: 66%;
-    /* border-left: 1px solid white; */
     padding-left: 2rem;
 }
 
@@ -148,6 +155,10 @@ h3 {
     font-size: 0.7rem;
     opacity: 0;
     animation: opacity-fadein-anim 1s .7s forwards;
+}
+
+.contacts-container {
+    display: none;
 }
 
 @keyframes opacity-fadein-anim {
