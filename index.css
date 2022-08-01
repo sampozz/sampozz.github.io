@@ -175,6 +175,26 @@ h3 {
     }
 }
 
+/* CONTACT INFO */
+
+.profile-text img {
+    width: 1.5em;
+    margin-right: 1em;
+}
+
+.profile-text a {
+    margin: 1em 0 1em 0;
+    display: flex;
+    align-content: center;
+    text-decoration: none;
+}
+
+.profile-text div {
+    display: inline-block;
+    color: white;
+}
+
+
 /* MOBILE */
 
 @media only screen and (max-width: 767px) {
