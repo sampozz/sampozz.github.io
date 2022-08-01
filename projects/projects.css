@@ -22,6 +22,7 @@ h1 a {
 h3 {
     margin: 0em 2em 1em 2em;
     animation: opacity-fadein-anim 1s .3s forwards;
+    -webkit-animation: opacity-fadein-anim 1s .3s forwards;
 }
 
 h3.start {
@@ -45,9 +46,11 @@ h3.end {
 }
 
 .project-description {
+    width: 50%;
     opacity: 0;
     font-size: 0.6rem;
     animation: opacity-fadein-anim 1s .5s forwards;
+    -webkit-animation: opacity-fadein-anim 1s .5s forwards;
 }
 
 .project-description.right {
@@ -62,6 +65,7 @@ img {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transition: box-shadow .5s;
     animation: opacity-fadein-anim 1s .7s forwards;
+    -webkit-animation: opacity-fadein-anim 1s .7s forwards;
 }
 
 img.left {
@@ -82,9 +86,20 @@ img:hover {
     background-color: white;
     margin: 2em 0 2em 0;
     animation: divider-anim 1s .3s forwards;
+    -webkit-animation: divider-anim 1s .3s forwards;
 }
 
 @keyframes divider-anim {
+    0% {
+        width: 0%
+    }
+
+    100% {
+        width: 60%
+    }
+}
+
+@-webkit-keyframes divider-anim {
     0% {
         width: 0%
     }
@@ -98,6 +113,10 @@ img:hover {
 
 @media only screen and (max-width: 767px) {
 
+    .container {
+        width: 90vw;
+    }
+
     .project-container {
         flex-direction: column;
     }
@@ -107,15 +126,16 @@ img:hover {
     }
 
     .project-description {
-        text-align: left !important;
+        width: 100%;
+        text-align: justify !important;
         opacity: 0;
         font-size: 0.6rem;
         animation: opacity-fadein-anim 1s .5s forwards;
+        -webkit-animation: opacity-fadein-anim 1s .5s forwards;
     }
 
-
     img {
-        width: 80%;
+        width: 90%;
         align-self: center;
         margin: 1.5em 0 0 0 !important;
     }
