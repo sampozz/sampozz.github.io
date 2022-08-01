@@ -214,3 +214,10 @@ h3 {
         }
     }
 }
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
