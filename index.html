@@ -1,31 +1,80 @@
 <!doctype HTML>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/index.css">
-    <link rel="stylesheet" href="./style/home.css">
-    <link rel="stylesheet" href="./style/about.css">
-    <link rel="stylesheet" href="./style/menu.css">
-    <link rel="stylesheet" href="./style/navbar.css">
-    <link rel="stylesheet" href="./style/footer.css">
-    <link rel="icon" href="media/ico.ico"/>
+    <link rel="icon" href="media/ico.ico" />
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Mono:wght@200;300&display=swap"
+        rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Samuele Pozzani</title>
 </head>
+
 <body>
-    <div class="background">
 
-        <div id="navbar"></div>
+    <div class="container">
+        <h1 class="mono">
+            <b>SAMUELE</b> POZZANI
+        </h1>
+        <div class="subtitle-border"></div>
+        <div class="subtitlebox">
+            <h2 class="mono">
+                COMPUTER ENGINEERING STUDENT
+            </h2>
+        </div>
+        <div class="subtitle-border"></div>
+        <div class="nested-container">
+            <div class="links-container">
+                <h3 class="mono">LINKS</h3>
+                <ul class="link-list">
+                    <li style="animation-delay: .5s" id="contacts-link"><a>Contact info</a></li>
+                    <li style="animation-delay: 0s" id="profile-link"><a>Profile</a></li>
+                    <li style="animation-delay: .7s"><a href="projects">Projects</a></li>
+                    <!-- <li style="animation-delay: .9s" id="cv-link"><a>Curriculum vitae</a></li> -->
+                    <!-- <li style="animation-delay: 1.1s"><a href="blog.html">Blog (coming soon)</a></li> -->
+                </ul>
+            </div>
+            <div class="profile-border"></div>
+            <div class="profile-container">
+                <h3 class="mono">PROFILE</h3>
+                <div class="profile-text">
+                    I am a Computer Engineering student at the University of Trento. I have always had a great passion
+                    for computers which led me to study how they work and how hardware and software are continuously
+                    improving. During my educational path, I committed to several projects and internships in many
+                    different fields of Information Technology, with the aim of developing my skills and highly
+                    increasing my knowledge.
+                </div>
+            </div>
+            <div class="contacts-container">
+                <h3 class="mono">CONTACT INFO</h3>
+                <div class="profile-text">
+                    <a href="mailto:samuele.pozzani@gmail.com">
+                        <img src="/media/email.png" alt="">
+                        <div>samuele.pozzani@gmail.com</div>
+                    </a>
 
-        <div id="fullscreen-menu"></div>
-    
-        <div id="content" class="fade-in"></div>
-        
-        <div id="footer"></div>
+                    <a href="https://github.com/sampozz">
+                        <img src="/media/github.png" alt="">
+                        <div>github.com/sampozz</div>
+                    </a>
 
+                    <a href="https://linkedin.com/in/samuele-p-a2356b1b2">
+                        <img src="/media/linkedin.png" alt="">
+                        <div>Linkedin</div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <script src="script/main.js"></script>
+
+
+    <script src="main.js"></script>
 </body>
+
 </html>
