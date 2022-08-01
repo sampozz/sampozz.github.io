@@ -149,7 +149,8 @@ h3 {
     }
 }
 
-.profile-container, .contacts-container {
+.profile-container,
+.contacts-container {
     width: 66%;
     padding-left: 2rem;
 }
@@ -171,5 +172,45 @@ h3 {
 
     100% {
         opacity: 1
+    }
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 767px) {
+
+    .nested-container {
+        flex-direction: column-reverse;
+    }
+
+    .profile-container,
+    .contacts-container {
+        width: 100%;
+        padding-left: 0;
+    }
+
+
+    .links-container {
+        display: block;
+        width: 100%;
+    }
+
+    .profile-border {
+        width: 0;
+        height: 1px !important;
+        background-color: white;
+        align-self: center;
+        margin: 1.5em 0 1.5em 0;
+        animation: profile-border-anim 1s .5s forwards;
+    }
+
+    @keyframes profile-border-anim {
+        0% {
+            width: 0%
+        }
+
+        100% {
+            width: 50%
+        }
     }
 }
