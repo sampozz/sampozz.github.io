@@ -53,6 +53,10 @@ h3.end {
     -webkit-animation: opacity-fadein-anim 1s .5s forwards;
 }
 
+.project-description a {
+    color: white;
+}
+
 .project-description.right {
     text-align: right;
 }
